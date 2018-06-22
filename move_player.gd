@@ -1,8 +1,8 @@
-extends Node
+extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+#Geschwindigkeit
+export var speed = 0.1
+var tile_size = 64
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -17,4 +17,4 @@ func _process(delta):
 		print("pressed space")
 
 func move_right():
-	pass
+	position.x += speed

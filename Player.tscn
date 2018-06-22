@@ -27,12 +27,13 @@ animations = [ {
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
+speed = 0.1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 2 )
 animation = "running"
-frame = 1
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 

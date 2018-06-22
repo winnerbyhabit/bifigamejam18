@@ -8,9 +8,9 @@ var last_coordinate
 # var b = "textvar"
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	#muss vor rand funktionen aufgerufen werden
 	randomize()	
+	
 	#setzt automatisch 6 küchen teile
 	set_random_tile(tile_coordinates)
 	for i in range(5):
