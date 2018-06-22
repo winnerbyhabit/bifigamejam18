@@ -1,0 +1,36 @@
+[gd_scene format=2]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 75.0
+margin_top = 403.0
+margin_right = 955.0
+margin_bottom = 975.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+size_flags_stretch_ratio = 1.1
+custom_colors/default_color = Color( 0.738281, 0.13489, 0.0547943, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 7
+text = "affe"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Size Flags", "custom_colors" ]
+
+
