@@ -23,7 +23,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
@@ -32,7 +32,7 @@ script = ExtResource( 1 )
 
 frames = SubResource( 2 )
 animation = "running"
-frame = 5
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
