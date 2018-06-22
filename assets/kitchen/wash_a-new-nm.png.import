@@ -7,10 +7,7 @@ path="res://.import/wash_a-new-nm.png-31837c7d9ff9cea6e9346ceca1eedf39.stex"
 [deps]
 
 source_file="res://assets/kitchen/wash_a-new-nm.png"
-source_md5="fb3e7ffd400940487e2ad7e2a7957059"
-
 dest_files=[ "res://.import/wash_a-new-nm.png-31837c7d9ff9cea6e9346ceca1eedf39.stex" ]
-dest_md5="9ead76f3ad9a872f6c59cb5d112421ab"
 
 [params]
 

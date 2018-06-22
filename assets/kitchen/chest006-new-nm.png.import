@@ -7,10 +7,7 @@ path="res://.import/chest006-new-nm.png-daf1e68ae01ed57db031ea1a921a1f50.stex"
 [deps]
 
 source_file="res://assets/kitchen/chest006-new-nm.png"
-source_md5="a8defde748f3ec9592b33e2896fadb51"
-
 dest_files=[ "res://.import/chest006-new-nm.png-daf1e68ae01ed57db031ea1a921a1f50.stex" ]
-dest_md5="d4eac5176055b6212014e9e395dd36d6"
 
 [params]
 

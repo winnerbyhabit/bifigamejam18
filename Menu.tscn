@@ -55,4 +55,6 @@ flat = false
 align = 1
 script = ExtResource( 1 )
 
+[connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
+
 

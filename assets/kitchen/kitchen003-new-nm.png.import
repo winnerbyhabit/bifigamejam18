@@ -7,10 +7,7 @@ path="res://.import/kitchen003-new-nm.png-4a7d233e791b47d29ed0f8804aff06de.stex"
 [deps]
 
 source_file="res://assets/kitchen/kitchen003-new-nm.png"
-source_md5="9f233bdb4bf560528174b435c643cae1"
-
 dest_files=[ "res://.import/kitchen003-new-nm.png-4a7d233e791b47d29ed0f8804aff06de.stex" ]
-dest_md5="a0c7bb8c33b053501d61900833d0261e"
 
 [params]
 

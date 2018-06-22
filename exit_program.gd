@@ -14,6 +14,6 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func exit_program():
+func _on_Button2_pressed():
 	print("Hello world")
-	pass
+	get_tree().quit()
