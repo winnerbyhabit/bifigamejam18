@@ -1,0 +1,113 @@
+[33mcommit 805f763e7d1041336a9edc465c62d4bc12faae28[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Zbiggichan <s6zbwojc@uni-bonn.de>
+Date:   Fri Jun 22 22:48:16 2018 +0200
+
+    Adds new cat movement sprite
+
+[33mcommit 775bb9085a078181d9646f5d3ba3f765b5678d8b[m
+Merge: aa3d704 289af1d
+Author: Nicolas <lilals@yahoo.de>
+Date:   Fri Jun 22 20:38:00 2018 +0000
+
+    Merge branch 'master' of https://github.com/winnerbyhabit/bifigamejam18
+
+[33mcommit aa3d7041680637e7f7e1ae02f10870e57e36dc68[m
+Merge: 9edb6d8 b046312
+Author: Nicolas <lilals@yahoo.de>
+Date:   Fri Jun 22 20:37:36 2018 +0000
+
+    Merge branch 'master' of https://github.com/winnerbyhabit/bifigamejam18
+
+[33mcommit 289af1d4a741b3f3d40cf58a9715fe019650d1dd[m
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 22:37:30 2018 +0200
+
+    dummy level
+
+[33mcommit 9edb6d8207bb73e55d744619872382003c5177b1[m
+Author: Nicolas <lilals@yahoo.de>
+Date:   Fri Jun 22 20:37:28 2018 +0000
+
+    Add player
+
+[33mcommit b046312b56096ee6f88fb46c6f211f45ee4b67ac[m
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 22:24:45 2018 +0200
+
+    Tileset
+
+[33mcommit 2261084d722d3b143dbf11c3b5ebd50d5469628f[m
+Merge: 2a9aea6 114a3f9
+Author: Nicolas <lilals@yahoo.de>
+Date:   Fri Jun 22 19:54:01 2018 +0000
+
+    merge
+
+[33mcommit 2a9aea69b139c60362dd10a3eef656fcab0607ee[m
+Merge: f527ee0 e41b934
+Author: Nicolas <lilals@yahoo.de>
+Date:   Fri Jun 22 19:38:20 2018 +0000
+
+    Merge branch 'master' of https://github.com/winnerbyhabit/bifigamejam18
+
+[33mcommit 114a3f9ee782dfddbc708d1d9153a3d596e2caf8[m
+Merge: 6bbe8f0 e41b934
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 21:38:13 2018 +0200
+
+    Merge branch 'master' of github.com:winnerbyhabit/bifigamejam18
+
+[33mcommit 6bbe8f0e6a97325269a8d75b1c3b08b0517f057e[m
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 21:33:27 2018 +0200
+
+    gitignore .import files
+
+[33mcommit f527ee059863c3dce8c05605f85b48f3685b4e8e[m
+Author: Nicolas <lilals@yahoo.de>
+Date:   Fri Jun 22 19:37:13 2018 +0000
+
+    Exit program on button press
+
+[33mcommit e41b934098b08f0363bdd54871dd2dd3b5978e68[m
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 21:33:27 2018 +0200
+
+    gitignore .import files
+
+[33mcommit f69fb7fea05f5cf38362ca97f80733201ef8023f[m
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 21:21:59 2018 +0200
+
+    godot import files
+
+[33mcommit 118be41fb6ace3c3047fd801180310ccdf7567ef[m
+Merge: af89826 b0f1243
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 21:21:14 2018 +0200
+
+    Merge branch 'master' of github.com:winnerbyhabit/bifigamejam18
+
+[33mcommit b0f12432457ad5955045b4a30ee9132d59d1e04b[m
+Author: Nicolas <lilals@yahoo.de>
+Date:   Fri Jun 22 19:19:42 2018 +0000
+
+    Add menu
+
+[33mcommit af898264dbb304b6637b3cddc3a9757a8c5aa091[m
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 21:11:28 2018 +0200
+
+    küchendinge
+
+[33mcommit 010419f656ecc7ffe80b6651fbdd9ba5ead81a2c[m
+Author: Christoph Heinen <heinen@fachschaft.info>
+Date:   Fri Jun 22 20:11:43 2018 +0200
+
+    projekt erstellt
+
+[33mcommit 4eb8f9521e1ac6a1be3b317c5a2b931ef3dc0332[m
+Author: winnerbyhabit <birresborner@gmail.com>
+Date:   Fri Jun 22 19:42:19 2018 +0200
+
+    Initial commit
