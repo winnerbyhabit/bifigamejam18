@@ -13,9 +13,7 @@
 
 script = ExtResource( 1 )
 bottom_height = 500
-spawn_speed_multiplier = 1.0
-
-bottle_frequency = 1.0
+bottle_frequency = 2.0
 
 [node name="bg" type="Sprite" parent="." index="0"]
 
@@ -62,7 +60,7 @@ number_of_tiles = 3
 
 position = Vector2( 128, 225 )
 _sections_unfolded = [ "Transform" ]
-speed = 40
+speed = 100
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="1"]
 
@@ -95,6 +93,7 @@ _sections_unfolded = [ "Transform" ]
 
 stream = ExtResource( 7 )
 volume_db = 1.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -103,6 +102,7 @@ bus = "Master"
 
 stream = ExtResource( 8 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
