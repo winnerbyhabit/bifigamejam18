@@ -31,7 +31,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
@@ -54,7 +54,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 1 )
 animation = "running"
-frame = 4
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -79,7 +79,6 @@ shape = SubResource( 2 )
 
 stream = ExtResource( 10 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -88,7 +87,6 @@ bus = "Master"
 
 stream = ExtResource( 11 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
