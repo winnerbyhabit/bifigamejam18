@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 
-[node name="Menu" type="Node" index="0"]
+[node name="Menu" type="Node"]
 
 [node name="Button" type="Button" parent="." index="0"]
 
@@ -14,7 +14,6 @@ margin_left = -46.0
 margin_right = 46.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -41,7 +40,6 @@ margin_top = 30.0
 margin_right = 51.0
 margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0

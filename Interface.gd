@@ -5,11 +5,11 @@ extends Node
 # var b = "textvar"
 
 func _ready():
-	# Called every time the node is added to the scene.
-	pass
+	$Punkte/Counter.text = str(global.points)
 
 func add_points(points):
-	$Punkte/Counter.text = str(int($Punkte/Counter.text) + points)
+	global.points += points
+	$Punkte/Counter.text = str(global.points)
 
 
 #func _process(delta):

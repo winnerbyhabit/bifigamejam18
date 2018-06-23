@@ -1,5 +1,7 @@
 extends Node
 
+signal change_level
+
 onready var old_player_pos = $Player.position
 
 export var bottom_height = 500
@@ -75,7 +77,6 @@ func spawn_single_bottle(pos):
 		bottle.get_node("Texture").texture = load(bottle_texture)
 		bottle.set_destroy_height(bottom_height)
 		bottle.position = pos
-		bottle.connect('destroy',self,'_on_destroy_bottle')
 		add_child(bottle)
 		bottle_timer = 0
 	if r == 5: # spawn Fishbowl
@@ -86,7 +87,6 @@ func spawn_single_bottle(pos):
 		bottle.set_name(bottle_type)
 		# bottle.set_destroy_height(bottom_height)
 		bottle.position = pos
-		# bottle.connect('destroy',self,'_on_destroy_bottle')
 		add_child(bottle)
 		bottle_timer = 0
 
@@ -97,9 +97,6 @@ func loop_spawn_bottle(delta):
 		spawn_single_bottle($Player.position + Vector2(1000,10))
 
 
-func _on_destroy_bottle():
-	if not $destroy_bottle.playing:
-		$destroy_bottle.play()
 
 func set_player(player):
 	remove_child($Player)
@@ -114,7 +111,7 @@ func initial_spawn_bottle():
 	print("initial spawn bottles")
 	print($Player.position)
 	var m = $Player.position.x + 1000
-	var i = 0
+	var i = -m
 	while i <= m:
 		spawn_single_bottle($Player.position + Vector2(i,10))
 		i += int (120.0 * random_distance())

@@ -1,7 +1,5 @@
 extends "res://Level.gd"
 
-signal change_level
-
 #gibt die koordinaten der begrenzungen an
 export(Vector2) var level_boundarys = Vector2(-5,5)
 export var hidden_wall_id = 4
@@ -25,6 +23,5 @@ func set_boundarys(boundarys):
 
 
 func _on_enemy_killed():
-	print('enenmy killed')
 	emit_signal('change_level')
 	
