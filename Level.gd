@@ -41,36 +41,54 @@ func random_distance():
 
 func spawn_single_bottle(pos):
 	# RNG
-	var r = randi() % 5
+	var r = randi() % 6
 	bottle_space = random_distance()
 	# spawn bottle
 	var bottle_scene
 	var bottle_texture
-	match r:
-		0: # spawn Glass
-			bottle_scene = "res://Glass.tscn"
-			bottle_texture = "res://assets/bottles/glass.png"
-		1: # spawn Bottle 1
-			bottle_scene = "res://Bottle.tscn"
-			bottle_texture = "res://assets/bottles/bottle1.png"
-		2: # spawn Bottle 2
-			bottle_scene = "res://Bottle.tscn"
-			bottle_texture = "res://assets/bottles/bottle2.png"
-		3: # spawn Bottle 3
-			bottle_scene = "res://Bottle.tscn"
-			bottle_texture = "res://assets/bottles/bottle3.png"
-		4: # spawn Bottle 4
-			bottle_scene = "res://Bottle.tscn"
-			bottle_texture = "res://assets/bottles/poison_bottle.png"
-	var scene = load(bottle_scene)
-	var bottle = scene.instance()
-	bottle.set_name("Bottle")
-	bottle.get_node("Texture").texture = load(bottle_texture)
-	bottle.set_destroy_height(bottom_height)
-	bottle.position = pos
-	bottle.connect('destroy',self,'_on_destroy_bottle')
-	add_child(bottle)
-	bottle_timer = 0
+	var bottle_type
+	if (0 <= r) and (r <= 4):
+		match r:
+			0: # spawn Glass
+				bottle_scene = "res://Glass.tscn"
+				bottle_texture = "res://assets/bottles/glass.png"
+				bottle_type = "Normal"
+			1: # spawn Bottle 1
+				bottle_scene = "res://Bottle.tscn"
+				bottle_texture = "res://assets/bottles/bottle1.png"
+				bottle_type = "Normal"
+			2: # spawn Bottle 2
+				bottle_scene = "res://Bottle.tscn"
+				bottle_texture = "res://assets/bottles/bottle2.png"
+				bottle_type = "Normal"
+			3: # spawn Bottle 3
+				bottle_scene = "res://Bottle.tscn"
+				bottle_texture = "res://assets/bottles/bottle3.png"
+				bottle_type = "Normal"
+			4: # spawn Poison bottle
+				bottle_scene = "res://Bottle.tscn"
+				bottle_texture = "res://assets/bottles/poison_bottle.png"
+				bottle_type = "Poison"
+		var scene = load(bottle_scene)
+		var bottle = scene.instance()
+		bottle.set_name(bottle_type)
+		bottle.get_node("Texture").texture = load(bottle_texture)
+		bottle.set_destroy_height(bottom_height)
+		bottle.position = pos
+		bottle.connect('destroy',self,'_on_destroy_bottle')
+		add_child(bottle)
+		bottle_timer = 0
+	if r == 5: # spawn Fishbowl
+		bottle_scene = "res://Fishbowl.tscn"
+		bottle_type = "Fish"
+		var scene = load(bottle_scene)
+		var bottle = scene.instance()
+		bottle.set_name(bottle_type)
+		# bottle.set_destroy_height(bottom_height)
+		bottle.position = pos
+		# bottle.connect('destroy',self,'_on_destroy_bottle')
+		add_child(bottle)
+		bottle_timer = 0
 
 
 func loop_spawn_bottle(delta):
