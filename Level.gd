@@ -2,6 +2,8 @@ extends Node
 
 onready var old_player_pos = $Player.position
 
+export var bottom_height = 500
+
 var bottle_timer = 0
 var bottle_space = 3
 
@@ -52,9 +54,15 @@ func spawn_bottle(delta):
 				bottle_scene = "res://Bottle.tscn"
 				bottle_texture = "res://assets/bottles/poison_bottle.png"
 		var scene = load(bottle_scene)
-		var scene_instance = scene.instance()
-		scene_instance.set_name("Bottle")
-		scene_instance.get_node("Texture").texture = load(bottle_texture)
-		scene_instance.position = $Player.position + Vector2(1000,10)
-		add_child(scene_instance)
+		var bottle = scene.instance()
+		bottle.set_name("Bottle")
+		bottle.get_node("Texture").texture = load(bottle_texture)
+		bottle.set_destroy_height(bottom_height)
+		bottle.position = $Player.position + Vector2(1000,10)
+		bottle.connect('destroy',self,'_on_destroy_bottle')
+		add_child(bottle)
 		bottle_timer = 0
+		
+func _on_destroy_bottle():
+	if not $destroy_bottle.playing:
+		$destroy_bottle.play()

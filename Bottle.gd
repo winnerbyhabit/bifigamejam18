@@ -1,19 +1,17 @@
 extends RigidBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+signal destroy
 
-func _ready():
-	# Initialization here
-	pass
+var destroy_height = 500
+
+func _process(delta):
+	if position.y > destroy_height:
+		emit_signal("destroy")
+		queue_free()
+
+func set_destroy_height(height):
+	destroy_height = height
 
 func kick():
-	print('kick')
-	print(collision_mask)
 	set_collision_mask_bit(0,false)
-
-	#set_collision_mask_bit(4,true)
-	print(collision_mask)
-	#set_collision_mask_bit(1,true)
-	#set_collision_layer_bit(1,false)
+	
