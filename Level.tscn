@@ -1,17 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/kitchen_customs/wallpaper/Pared.png" type="Texture" id=2]
-[ext_resource path="res://Tileset.tres" type="TileSet" id=3]
-[ext_resource path="res://TileMap.gd" type="Script" id=4]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://sounds/background/cat_song.wav" type="AudioStream" id=6]
-[ext_resource path="res://Glass.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Bottle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/kitchen_customs/floor/floor.png" type="Texture" id=3]
+[ext_resource path="res://Tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://TileMap.gd" type="Script" id=5]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sounds/background/cat_song.wav" type="AudioStream" id=7]
 
 [node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
+spawn_speed_multiplier = 1.0
 
 [node name="bg" type="Sprite" parent="." index="0"]
 
@@ -21,10 +21,18 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1536, 256 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="TileMap" type="TileMap" parent="." index="1"]
+[node name="bg_floor" type="Sprite" parent="." index="1"]
+
+position = Vector2( 381.949, 472.492 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1536, 256 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
 
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 256, 256 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -40,13 +48,13 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Cell" ]
 tile_coordinates = Vector2( 0, 1 )
 start_tiles = 5
 number_of_tiles = 3
 
-[node name="Player" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 128, 225 )
 _sections_unfolded = [ "Transform" ]
@@ -81,17 +89,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player" index="3"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = 1.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
-
-[node name="Glass" parent="." index="3" instance=ExtResource( 7 )]
-
-[node name="Bottle" parent="." index="4" instance=ExtResource( 8 )]
-
-position = Vector2( 340, 40 )
 
 
