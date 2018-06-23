@@ -1,9 +1,65 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://move_player.gd" type="Script" id=1]
+[ext_resource path="res://assets/cat/cat7.png" type="Texture" id=2]
+[ext_resource path="res://assets/cat/cat1.png" type="Texture" id=3]
+[ext_resource path="res://assets/cat/cat2.png" type="Texture" id=4]
+[ext_resource path="res://assets/cat/cat4.png" type="Texture" id=5]
+[ext_resource path="res://assets/cat/cat3.png" type="Texture" id=6]
+[ext_resource path="res://assets/cat/cat5.png" type="Texture" id=7]
+[ext_resource path="res://assets/cat/cat6.png" type="Texture" id=8]
 
-[node name="Player" type="Node" index="0"]
+[sub_resource type="SpriteFrames" id=1]
 
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "running",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Player" type="Node2D"]
+
+position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
+
+automove = true
+speed = 40
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "running"
+frame = 4
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( -0.258977, 0 )
+scale = Vector2( 3.14663, 1 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_wall_collision"]
 
 
