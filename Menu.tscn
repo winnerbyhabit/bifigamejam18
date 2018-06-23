@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://exit_program.gd" type="Script" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=1]
 
-[node name="Node" type="Node"]
+[node name="Menu" type="Node" index="0"]
 
 [node name="Button" type="Button" parent="." index="0"]
 
@@ -14,6 +14,7 @@ margin_left = -46.0
 margin_right = 46.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -26,6 +27,7 @@ group = null
 text = "Spiel starten"
 flat = false
 align = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="Button2" type="Button" parent="." index="1"]
@@ -39,6 +41,7 @@ margin_top = 30.0
 margin_right = 51.0
 margin_bottom = 50.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -52,6 +55,8 @@ text = "Spiel beenden"
 flat = false
 align = 1
 script = ExtResource( 1 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 
 [connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
 
