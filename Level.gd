@@ -9,7 +9,7 @@ export var bottom_height = 500
 var bottle_timer = 0
 var bottle_space = 1
 
-export var bottle_frequency = 1.0
+export var bottle_frequency = 2.0
 # change this value to set distance between bottles
 # higher frequency == more bottles
 
@@ -36,7 +36,9 @@ func spawn_bottle(delta):
 	if bottle_timer >= bottle_space:
 		# RNG
 		var r = randi() % 5
-		bottle_space = rand_range(1, 1 + 5 / bottle_frequency)
+		bottle_space = rand_range(0.5, 1.0 + (5.0 / bottle_frequency))
+		print(5.0 / bottle_frequency)
+		print(bottle_space)
 		# TODO Wahrscheinlichkeitsverteilung aendern
 		# spawn bottle
 		var bottle_scene
