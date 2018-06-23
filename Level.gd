@@ -1,5 +1,7 @@
 extends Node
 
+signal change_level
+
 onready var old_player_pos = $Player.position
 
 export var bottom_height = 500

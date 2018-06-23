@@ -10,11 +10,12 @@ var level = null
 func _ready():
 	change_level()
 	pass
+
 func change_level():
 	current_level += 1
 	if has_node('Level'):
 		var level = get_node('Level')
-		remove_child(level)
+		call_deferred("remove_child",level)
 	load_level(current_level)
 
 	
