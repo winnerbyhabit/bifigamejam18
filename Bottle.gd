@@ -29,12 +29,6 @@ func destroy():
 	$Texture.hide()
 	if not $Destroy.playing:
 		$Destroy.play()
-	
-
-
-func enemy_enter( body ):
-	if body.is_in_group('enemy'):
-		destroy()
 
 
 func test():
