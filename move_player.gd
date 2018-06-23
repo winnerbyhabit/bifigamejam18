@@ -1,7 +1,9 @@
 extends Node2D
 
 #Geschwindigkeit
-export var speed = 60
+
+
+export var speed = 40
 
 #katze bewegt sich automatisch
 export var automove = true
@@ -22,6 +24,7 @@ func _process(delta):
 	else:
 		if Input.is_action_pressed("player_right"):
 			direction = 1
+
 			$AnimatedSprite.flip_h = false
 		elif Input.is_action_pressed("player_left"):
 			direction = -1
@@ -29,6 +32,10 @@ func _process(delta):
 			
 		move(delta)
 		
+
+		elif Input.is_action_pressed("player_right"):
+			direction = -1
+
 	if Input.is_action_pressed("player_hit"):
 		print("pressed space")
 
@@ -40,4 +47,4 @@ func _on_wall_collision( body ):
 	#turn on wall collision
 	direction *= -1
 	$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
-	pass # replace with function body
+
