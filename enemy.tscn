@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 8.80433, 10 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -42,15 +42,15 @@ lifepoints = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -2.21086, 0 )
-scale = Vector2( 3.44698, 1 )
+position = Vector2( 0.259619, -14.4396 )
+scale = Vector2( 3.25727, 0.308037 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 5
+frame = 4
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_enemy_wall_collision"]

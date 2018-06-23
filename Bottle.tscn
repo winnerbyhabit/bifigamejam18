@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Bottle.gd" type="Script" id=1]
 [ext_resource path="res://assets/bottles/bottle1.png" type="Texture" id=2]
 [ext_resource path="res://glass_particles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 11 )
+extents = Vector2( 10, 49.6802 )
 
 [node name="Bottle" type="RigidBody2D" index="0" groups=[
 "bottle",
@@ -43,23 +44,27 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 3.39286, 0 )
-scale = Vector2( 2.0467, 5 )
+position = Vector2( 1.77178, 21.8731 )
+scale = Vector2( 2.0467, 0.678843 )
 shape = SubResource( 1 )
 
 [node name="particles" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 1.6535, 35.9615 )
+position = Vector2( -34.5506, 40.8247 )
 
-[node name="Timer" type="Timer" parent="." index="3"]
+[node name="Destroy" type="AudioStreamPlayer2D" parent="." index="3"]
 
-process_mode = 1
-wait_time = 0.5
-one_shot = true
-autostart = false
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+_sections_unfolded = [ "Transform" ]
 
-[connection signal="body_entered" from="." to="." method="_on_Bottle_body_entered"]
+[connection signal="body_entered" from="." to="." method="enemy_enter"]
 
-[connection signal="timeout" from="Timer" to="." method="queue_free"]
+[connection signal="finished" from="Destroy" to="." method="test"]
 
 

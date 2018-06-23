@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Bottle.gd" type="Script" id=1]
 [ext_resource path="res://assets/bottles/glass.png" type="Texture" id=2]
 [ext_resource path="res://glass_particles.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/bottles/glass_scherbe_weiss.png" type="Texture" id=4]
+[ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10, 2.78522 )
 
-[node name="Glass" type="RigidBody2D" index="0" groups=[
+[node name="Glass" type="RigidBody2D" groups=[
 "bottle",
 ]]
 
@@ -42,23 +43,28 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.15383, 3.00002 )
-scale = Vector2( 2.22527, 4.61538 )
+position = Vector2( 0.694204, 26.9808 )
+scale = Vector2( 2.22527, 8.0491 )
 shape = SubResource( 1 )
 
 [node name="particles" parent="." index="2" instance=ExtResource( 3 )]
 
+position = Vector2( 4.43961, 8.12644 )
+scale = Vector2( 1.27125, 1 )
 texture = ExtResource( 4 )
 
-[node name="Timer" type="Timer" parent="." index="3"]
+[node name="Destroy" type="AudioStreamPlayer2D" parent="." index="3"]
 
-process_mode = 1
-wait_time = 0.5
-one_shot = true
-autostart = false
+position = Vector2( -1.81107, 31.7472 )
+scale = Vector2( 1, 0.607841 )
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
-[connection signal="timeout" from="Timer" to="." method="queue_free"]
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="Destroy" to="." method="test"]
 
 
