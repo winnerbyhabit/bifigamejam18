@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Interface.gd" type="Script" id=1]
+[ext_resource path="res://Claw.tscn" type="PackedScene" id=2]
 
 [node name="Interface" type="Node2D" index="0"]
 
@@ -15,6 +16,7 @@ anchor_bottom = 0.0
 margin_right = 76.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -32,6 +34,7 @@ margin_top = 6.0
 margin_right = 52.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -51,6 +54,7 @@ margin_left = 50.0
 margin_right = 58.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -60,5 +64,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin" ]
+
+[node name="Claw" parent="." index="2" instance=ExtResource( 2 )]
 
 
