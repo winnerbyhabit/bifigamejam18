@@ -26,7 +26,7 @@ func _ready():
 func set_random_tile(coordinate):
 	
 	var random_id = randi()%number_of_tiles
-	set_cell(coordinate[0],coordinate.y,random_id)
+	set_cell(coordinate.x,coordinate.y,random_id)
 
 
 func set_next_tile(direction):

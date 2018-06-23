@@ -8,12 +8,13 @@
 [ext_resource path="res://TileMap.gd" type="Script" id=6]
 [ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=7]
 
-[node name="BossLevel" type="Node" index="0"]
+[node name="BossLevel" type="Node"]
 
 script = ExtResource( 1 )
 bottom_height = 500
 bottle_frequency = 1.0
 level_boundarys = Vector2( -5, 5 )
+hidden_wall_id = 4
 
 [node name="bg" type="Sprite" parent="." index="0"]
 
