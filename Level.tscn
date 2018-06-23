@@ -6,7 +6,7 @@
 [ext_resource path="res://TileMap.gd" type="Script" id=4]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -47,9 +47,7 @@ number_of_tiles = 3
 
 position = Vector2( 128, 225 )
 _sections_unfolded = [ "Transform" ]
-
 speed = 40
-automove = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="1"]
 

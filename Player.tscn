@@ -32,15 +32,14 @@ extents = Vector2( 10, 10 )
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
-
+speed = 60
 automove = true
-speed = 40
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "running"
-frame = 4
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
