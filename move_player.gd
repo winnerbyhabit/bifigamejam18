@@ -1,7 +1,7 @@
 extends Node2D
 
 #Geschwindigkeit
-
+signal game_over
 
 export var speed = 40
 
@@ -42,6 +42,8 @@ func _process(delta):
 				$meow.play()
 			$Interface_Layer/Interface.add_points( colliding_bottle.kick())
 			bottle_collision = false
+			if colliding_bottle.is_poison:
+				poisoned()
 		else:
 			
 			if not $meow.playing and not $meow_wrong.playing:
@@ -51,6 +53,9 @@ func _process(delta):
 func move(delta):
 	position.x += speed*delta*direction
 
+
+func poisoned():
+	emit_signal('game_over')
 
 func _on_wall_collision( body ):
 	if body.is_in_group("wall"):

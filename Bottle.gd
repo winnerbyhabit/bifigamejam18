@@ -2,6 +2,8 @@ extends RigidBody2D
 
 signal destroy
 
+export var is_poison = false
+
 export var points = 5
 
 var destroy_height = 500

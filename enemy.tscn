@@ -45,7 +45,7 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch" ]
 
-[node name="enemy" type="Area2D" index="0" groups=[
+[node name="enemy" type="Area2D" groups=[
 "enemy",
 ]]
 
@@ -73,7 +73,7 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 4
+frame = 5
 playing = true
 
 [node name="lifebar" type="ProgressBar" parent="." index="2"]

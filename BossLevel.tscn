@@ -110,6 +110,8 @@ number_of_tiles = 3
 position = Vector2( -332.422, 539.182 )
 lifepoints = 3
 
+[connection signal="game_over" from="Player" to="." method="_on_gameover"]
+
 [connection signal="enemy_killed" from="enemy" to="." method="_on_enemy_killed"]
 
 

@@ -1,15 +1,14 @@
 extends Label
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+signal restart
+
 var credits= [
 "Chief Programmer - \nChristoph Heinen",
 "Creative Director - \nZbigniew Wojciechowski",
 "Physics & Effects - \nNicolas Schmitt",
 "Sound Designer - \nChristoph Heinen",
 "Art Designer - \nZbigniew Wojciechowski",
-"With special thanks to: \nOpenGameArt"
+"With special thanks to: \nOpenGameArt.org"
 ]
 var counter=0
 
@@ -28,4 +27,5 @@ func next_credit():
 		text = credits[counter]
 		counter+=1
 	else:
-		get_tree().quit()
+		emit_signal('restart')
+		#get_tree().quit()
