@@ -1,7 +1,12 @@
 extends Node2D
 
 #Geschwindigkeit
-export var speed = 0.1
+export var speed = 40
+
+#katze bewegt sich automatisch
+export var automove = true
+
+var direction = 1
 var tile_size = 64
 
 func _ready():
@@ -12,9 +17,15 @@ func _ready():
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	move_right()
+	if automove:
+		move(delta)
+	else:
+		if Input.is_action_pressed("player_right"):
+			direction = 1
+		elif Input.is_action_pressed("player_right"):
+			direction = -1
 	if Input.is_action_pressed("player_hit"):
 		print("pressed space")
 
-func move_right():
-	position.x += speed
+func move(delta):
+	position.x += speed*delta*direction
