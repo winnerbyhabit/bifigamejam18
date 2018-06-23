@@ -6,7 +6,7 @@
 [ext_resource path="res://Tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://TileMap.gd" type="Script" id=5]
 
-[node name="BossLevel" type="Node"]
+[node name="BossLevel" type="Node" index="0"]
 
 script = ExtResource( 1 )
 level_boundarys = Vector2( -5, 5 )
@@ -51,7 +51,9 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="TileMap" type="TileMap" parent="." index="2"]
+[node name="TileMap" type="TileMap" parent="." index="2" groups=[
+"wall",
+]]
 
 mode = 0
 tile_set = ExtResource( 4 )

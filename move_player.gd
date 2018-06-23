@@ -42,7 +42,8 @@ func move(delta):
 
 
 func _on_wall_collision( body ):
-	#turn on wall collision
-	direction *= -1
-	$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
+	if body.is_in_group("wall"):
+		#turn on wall collision
+		direction *= -1
+		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
 

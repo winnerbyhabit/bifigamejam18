@@ -7,7 +7,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11, 11 )
 
-[node name="Glass" type="RigidBody2D" index="0"]
+[node name="Glass" type="RigidBody2D" groups=[
+"bottle",
+]]
 
 input_pickable = false
 collision_layer = 1
@@ -27,6 +29,7 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Glass" type="Sprite" parent="." index="0"]
 

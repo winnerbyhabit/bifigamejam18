@@ -29,7 +29,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
@@ -40,7 +40,7 @@ automove = true
 
 frames = SubResource( 1 )
 animation = "running"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -53,6 +53,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
