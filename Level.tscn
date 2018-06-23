@@ -8,9 +8,10 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sounds/background/cat_song.wav" type="AudioStream" id=7]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
+spawn_speed_multiplier = 1.0
 
 [node name="bg" type="Sprite" parent="." index="0"]
 
@@ -48,7 +49,7 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Cell", "Collision" ]
+_sections_unfolded = [ "Cell" ]
 tile_coordinates = Vector2( 0, 1 )
 start_tiles = 5
 number_of_tiles = 3
@@ -57,7 +58,7 @@ number_of_tiles = 3
 
 position = Vector2( 128, 225 )
 _sections_unfolded = [ "Transform" ]
-speed = 100
+speed = 40
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="1"]
 
@@ -90,6 +91,7 @@ _sections_unfolded = [ "Transform" ]
 
 stream = ExtResource( 7 )
 volume_db = 1.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"

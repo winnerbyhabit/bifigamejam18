@@ -3,6 +3,9 @@ extends Node
 onready var old_player_pos = $Player.position
 
 var bottle_timer = 0
+var bottle_space = 3
+
+export var spawn_speed_multiplier = 1.0
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -24,9 +27,10 @@ func _process(delta):
 func spawn_bottle(delta):
 	bottle_timer += delta
 	# TODO timer aendern
-	if bottle_timer >= 5:
+	if bottle_timer >= bottle_space:
 		# RNG
 		var r = randi() % 5
+		bottle_space = rand_range(2,4) * spawn_speed_multiplier
 		# TODO Wahrscheinlichkeitsverteilung aendern
 		# spawn bottle
 		var bottle_scene
