@@ -31,10 +31,7 @@ func _process(delta):
 			$AnimatedSprite.flip_h = true
 			
 		move(delta)
-		
 
-		elif Input.is_action_pressed("player_right"):
-			direction = -1
 
 	if Input.is_action_pressed("player_hit"):
 		print("pressed space")
