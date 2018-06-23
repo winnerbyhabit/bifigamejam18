@@ -7,9 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 11 )
 
-[node name="Bottle" type="RigidBody2D" groups=[
-"bottle",
-]]
+[node name="Bottle" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -29,9 +27,8 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
-_sections_unfolded = [ "Collision" ]
 
-[node name="Bottle" type="Sprite" parent="." index="0"]
+[node name="Texture" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0, -2 )
 scale = Vector2( 1, 0.96875 )
