@@ -9,7 +9,7 @@
 [ext_resource path="res://sounds/background/cat_song.wav" type="AudioStream" id=7]
 [ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=8]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 bottom_height = 500
@@ -93,6 +93,7 @@ _sections_unfolded = [ "Transform" ]
 
 stream = ExtResource( 7 )
 volume_db = 1.0
+pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
@@ -101,6 +102,7 @@ bus = "Master"
 
 stream = ExtResource( 8 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
