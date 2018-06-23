@@ -6,9 +6,12 @@ export var points = 5
 
 var destroy_height = 500
 
+var will_destroyed = false
+
 func _process(delta):
 	if position.y > destroy_height:
-		destroy()
+		if not will_destroyed:
+			destroy()
 
 
 func set_destroy_height(height):
@@ -19,18 +22,21 @@ func kick():
 	return points
 	
 func destroy():
-	emit_signal("destroy")
+	will_destroyed = true
+	#emit_signal("destroy")
 	$particles.emitting = true
 	mode = MODE_STATIC
 	$Texture.hide()
-	if $Timer.is_stopped():
-		$Timer.start()
+	if not $Destroy.playing:
+		$Destroy.play()
 	
 
-func _on_Timer_timeout():
-	queue_free()#print('timeout')
 
-
-func _on_Bottle_body_entered( body ):
+func enemy_enter( body ):
 	if body.is_in_group('enemy'):
 		destroy()
+
+
+func test():
+	queue_free()
+	#pass # replace with function body

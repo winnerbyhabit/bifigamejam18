@@ -94,7 +94,7 @@ func spawn_single_bottle(pos):
 func loop_spawn_bottle(delta):
 	bottle_timer += delta
 	if bottle_timer >= bottle_space:
-		spawn_single_bottle($Player.position + Vector2(1000,10))
+		spawn_single_bottle($Player.position + Vector2(1000,0))
 
 
 
@@ -113,6 +113,6 @@ func initial_spawn_bottle():
 	var m = $Player.position.x + 1000
 	var i = -m
 	while i <= m:
-		spawn_single_bottle($Player.position + Vector2(i,10))
+		spawn_single_bottle($Player.position + Vector2(i,0))
 		i += int (120.0 * random_distance())
 
