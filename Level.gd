@@ -91,7 +91,6 @@ func get_player():
 	var player = $Player
 	remove_child($Player)
 	return player
-=======
 
 func initial_spawn_bottle():
 	print("initial spawn bottles")

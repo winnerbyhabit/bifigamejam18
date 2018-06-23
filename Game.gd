@@ -12,6 +12,7 @@ func _ready():
 	pass
 func change_level():
 	current_level += 1
+
 	var level = get_node('Level')
 	remove_child(level)
 	load_level(current_level)
@@ -25,6 +26,7 @@ func load_level(level):
 		level.connect('change_level',self,'change_level')
 	else:
 		level = preload('res://Level.tscn').instance()
+		level.set_name("Level")
 		add_child(level)
 		level.connect('change_level',self,'change_level')
 #func _process(delta):
