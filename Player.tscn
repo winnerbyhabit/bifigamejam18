@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://move_player.gd" type="Script" id=1]
 [ext_resource path="res://assets/cat/cat7.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/cat/cat5.png" type="Texture" id=7]
 [ext_resource path="res://assets/cat/cat6.png" type="Texture" id=8]
 [ext_resource path="res://sounds/110011__tuberatanka__cat-meow.wav" type="AudioStream" id=9]
+[ext_resource path="res://sounds/415209__inspectorj__cat-screaming-a.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -29,7 +30,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
@@ -69,6 +70,16 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="meow_wrong" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_wall_collision"]
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
 
 

@@ -11,6 +11,8 @@ export var automove = true
 var direction = 1
 var tile_size = 64
 
+var bottle_collision = false
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -34,8 +36,12 @@ func _process(delta):
 
 
 	if Input.is_action_pressed("player_hit"):
-		if not $meow.playing:
-			$meow.play()
+		if bottle_collision:
+			if not $meow.playing:
+				$meow.play()
+		else:
+			if not $meow_wrong.playing:
+				$meow_wrong.play()
 
 func move(delta):
 	position.x += speed*delta*direction
@@ -46,4 +52,11 @@ func _on_wall_collision( body ):
 		#turn on wall collision
 		direction *= -1
 		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
+	elif body.is_in_group("bottle"):
+		bottle_collision = true
 
+
+
+func _on_body_exited( body ):
+	if body.is_in_group("bottle"):
+		bottle_collision = false
