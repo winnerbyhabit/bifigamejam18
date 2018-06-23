@@ -8,8 +8,8 @@ var destroy_height = 500
 
 func _process(delta):
 	if position.y > destroy_height:
-		emit_signal("destroy")
-		queue_free()
+		destroy()
+
 
 func set_destroy_height(height):
 	destroy_height = height
@@ -17,3 +17,15 @@ func set_destroy_height(height):
 func kick():
 	set_collision_mask_bit(0,false)
 	return points
+	
+func destroy():
+	emit_signal("destroy")
+	$particles.emitting = true
+	mode = MODE_STATIC
+	$Texture.hide()
+	if $Timer.is_stopped():
+		$Timer.start()
+	
+
+func _on_Timer_timeout():
+	print('timeout')#pass # replace with function body

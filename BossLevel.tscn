@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BossLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/kitchen_customs/wallpaper/Pared.png" type="Texture" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://TileMap.gd" type="Script" id=5]
+[ext_resource path="res://assets/kitchen_customs/floor/floor.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://TileMap.gd" type="Script" id=6]
+[ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=7]
 
 [node name="BossLevel" type="Node"]
 
@@ -12,6 +14,7 @@ script = ExtResource( 1 )
 bottom_height = 500
 bottle_frequency = 1.0
 level_boundarys = Vector2( -5, 5 )
+hidden_wall_id = 4
 
 [node name="bg" type="Sprite" parent="." index="0"]
 
@@ -21,7 +24,15 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1792, 300 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+[node name="bg_floor" type="Sprite" parent="." index="1"]
+
+position = Vector2( 43.3736, 500.778 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1792, 200 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 32.2175, 223.402 )
 speed = 200
@@ -53,12 +64,12 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="TileMap" type="TileMap" parent="." index="2" groups=[
+[node name="TileMap" type="TileMap" parent="." index="3" groups=[
 "wall",
 ]]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 256, 256 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -74,7 +85,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Cell" ]
 __meta__ = {
 "_edit_lock_": true
@@ -82,5 +93,15 @@ __meta__ = {
 tile_coordinates = Vector2( -5, 1 )
 start_tiles = 10
 number_of_tiles = 3
+
+[node name="destroy_bottle" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
