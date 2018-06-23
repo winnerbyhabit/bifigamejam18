@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://BossLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/kitchen_customs/wallpaper/Pared.png" type="Texture" id=2]
@@ -7,11 +7,12 @@
 [ext_resource path="res://Tileset.tres" type="TileSet" id=5]
 [ext_resource path="res://TileMap.gd" type="Script" id=6]
 [ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=7]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=8]
 
 [node name="BossLevel" type="Node"]
 
 script = ExtResource( 1 )
-bottom_height = 500
+bottom_height = 550
 bottle_frequency = 1.0
 level_boundarys = Vector2( -5, 5 )
 hidden_wall_id = 4
@@ -34,7 +35,7 @@ _sections_unfolded = [ "Region" ]
 
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 32.2175, 223.402 )
+position = Vector2( 127.991, 226.613 )
 speed = 200
 automove = false
 
@@ -103,5 +104,11 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="enemy" parent="." index="5" instance=ExtResource( 8 )]
+
+position = Vector2( -332.422, 526.182 )
+
+[connection signal="enemy_killed" from="enemy" to="." method="_on_enemy_killed"]
 
 

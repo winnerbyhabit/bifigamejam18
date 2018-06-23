@@ -1,8 +1,11 @@
-extends RigidBody2D
+extends Area2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+export var speed = 100
+export var lifepoints = 1
+
+signal enemy_killed
+
+var direction = -1
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -16,4 +19,19 @@ func _process(delta):
 #	pass
 
 func move(delta):
+	position.x += speed*delta*direction
 	
+func _on_enemy_wall_collision( body ):
+	if body.is_in_group("wall"):
+		#turn on wall collision
+		direction *= -1
+		$AnimatedSprite.flip_h = not $AnimatedSprite.flip_h
+		
+	elif body.is_in_group('bottle'):
+		lifepoints -= 1
+		print(lifepoints)
+		if lifepoints <= 0:
+			kill_enemy()
+			
+func kill_enemy():
+	emit_signal('enemy_killed')

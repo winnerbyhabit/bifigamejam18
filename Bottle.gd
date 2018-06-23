@@ -29,3 +29,9 @@ func destroy():
 
 func _on_Timer_timeout():
 	print('timeout')#pass # replace with function body
+
+
+func _on_Bottle_body_entered( body ):
+	if body.is_in_group('enemy'):
+		destroy()
+	pass # replace with function body

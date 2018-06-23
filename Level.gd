@@ -72,3 +72,12 @@ func spawn_bottle(delta):
 func _on_destroy_bottle():
 	if not $destroy_bottle.playing:
 		$destroy_bottle.play()
+
+func set_player(player):
+	remove_child($Player)
+	add_child(player)
+
+func get_player():
+	var player = $Player
+	remove_child($Player)
+	return player
