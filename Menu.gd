@@ -16,7 +16,7 @@ func _ready():
 
 func _on_Button_pressed():
 	print("Hello")
-	get_tree().change_scene("res://Level.tscn")
+	get_tree().change_scene("res://Game.tscn")
 	# http://docs.godotengine.org/en/latest/getting_started/step_by_step/scene_tree.html#changing-current-scene
 	# TODO background loading
 	# http://docs.godotengine.org/en/latest/tutorials/io/background_loading.html
