@@ -13,8 +13,6 @@
 
 script = ExtResource( 1 )
 bottom_height = 500
-spawn_speed_multiplier = 1.0
-
 bottle_frequency = 1.0
 
 [node name="bg" type="Sprite" parent="." index="0"]
