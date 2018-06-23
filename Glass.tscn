@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Bottle.gd" type="Script" id=1]
 [ext_resource path="res://assets/bottles/glass.png" type="Texture" id=2]
+[ext_resource path="res://glass_particles.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -32,6 +33,7 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+points = 5
 
 [node name="Texture" type="Sprite" parent="." index="0"]
 
@@ -42,5 +44,18 @@ texture = ExtResource( 2 )
 position = Vector2( 0.15383, 3.00002 )
 scale = Vector2( 2.22527, 4.61538 )
 shape = SubResource( 1 )
+
+[node name="particles" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
