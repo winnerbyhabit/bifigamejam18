@@ -12,9 +12,9 @@ func _ready():
 	pass
 func change_level():
 	current_level += 1
-
-	var level = get_node('Level')
-	remove_child(level)
+	if has_node('Level'):
+		var level = get_node('Level')
+		remove_child(level)
 	load_level(current_level)
 
 	
