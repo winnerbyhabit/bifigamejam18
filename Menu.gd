@@ -14,6 +14,14 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+func _on_Button_pressed():
+	print("Hello")
+	get_tree().change_scene("res://Level.tscn")
+	# http://docs.godotengine.org/en/latest/getting_started/step_by_step/scene_tree.html#changing-current-scene
+	# TODO background loading
+	# http://docs.godotengine.org/en/latest/tutorials/io/background_loading.html
+
+
+# exit program
 func _on_Button2_pressed():
-	print("Hello world")
 	get_tree().quit()

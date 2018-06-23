@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://move_player.gd" type="Script" id=1]
 [ext_resource path="res://assets/cat/cat7.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/cat/cat3.png" type="Texture" id=6]
 [ext_resource path="res://assets/cat/cat5.png" type="Texture" id=7]
 [ext_resource path="res://assets/cat/cat6.png" type="Texture" id=8]
+[ext_resource path="res://sounds/110011__tuberatanka__cat-meow.wav" type="AudioStream" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -28,7 +29,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
@@ -39,7 +40,7 @@ automove = true
 
 frames = SubResource( 1 )
 animation = "running"
-frame = 5
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -58,6 +59,14 @@ audio_bus_name = "Master"
 position = Vector2( -0.258977, 0 )
 scale = Vector2( 3.14663, 1 )
 shape = SubResource( 2 )
+
+[node name="meow" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_wall_collision"]
 

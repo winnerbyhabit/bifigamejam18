@@ -34,7 +34,8 @@ func _process(delta):
 
 
 	if Input.is_action_pressed("player_hit"):
-		print("pressed space")
+		if not $meow.playing:
+			$meow.play()
 
 func move(delta):
 	position.x += speed*delta*direction
