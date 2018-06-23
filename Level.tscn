@@ -40,13 +40,15 @@ tile_data = PoolIntArray(  )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Cell" ]
 tile_coordinates = Vector2( 0, 1 )
+start_tiles = 5
 number_of_tiles = 3
 
 [node name="Player" parent="." index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 128, 225 )
 _sections_unfolded = [ "Transform" ]
-speed = 0.01
+speed = 40
+automove = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="1"]
 

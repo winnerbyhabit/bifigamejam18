@@ -8,6 +8,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	#updates map
 	if int(old_player_pos.x / $TileMap.cell_size.x) < int($Player.position.x / $TileMap.cell_size.x):
 		$TileMap.set_next_tile()
 		$bg.position.x += $TileMap.cell_size.x
