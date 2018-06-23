@@ -43,7 +43,8 @@ func _process(delta):
 			colliding_bottle.kick()
 			bottle_collision = false
 		else:
-			if not $meow_wrong.playing:
+			
+			if not $meow.playing and not $meow_wrong.playing:
 				$meow_wrong.play()
 			
 
