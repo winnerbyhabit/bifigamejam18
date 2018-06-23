@@ -39,8 +39,6 @@ func spawn_bottle(delta):
 		# RNG
 		var r = randi() % 5
 		bottle_space = rand_range(0.5, 1.0 + (5.0 / bottle_frequency))
-		print(5.0 / bottle_frequency)
-		print(bottle_space)
 		# TODO Wahrscheinlichkeitsverteilung aendern
 		# spawn bottle
 		var bottle_scene
