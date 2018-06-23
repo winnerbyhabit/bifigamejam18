@@ -23,6 +23,5 @@ func set_boundarys(boundarys):
 
 
 func _on_enemy_killed():
-	print('enenmy killed')
 	emit_signal('change_level')
 	

@@ -1,7 +1,7 @@
 extends Area2D
 
 export var speed = 100
-export var lifepoints = 1
+export var lifepoints = 3
 
 signal enemy_killed
 
@@ -29,7 +29,6 @@ func _on_enemy_wall_collision( body ):
 		
 	elif body.is_in_group('bottle'):
 		lifepoints -= 1
-		print(lifepoints)
 		if lifepoints <= 0:
 			kill_enemy()
 			

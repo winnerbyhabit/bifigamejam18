@@ -28,7 +28,7 @@ func destroy():
 	
 
 func _on_Timer_timeout():
-	print('timeout')
+	queue_free()#print('timeout')
 
 
 func _on_Bottle_body_entered( body ):
