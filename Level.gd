@@ -2,10 +2,13 @@ extends Node
 
 onready var old_player_pos = $Player.position
 
+# initialize variables; do not change
 var bottle_timer = 0
-var bottle_space = 3
+var bottle_space = 1
 
-export var spawn_speed_multiplier = 1.0
+export var bottle_frequency = 1.0
+# change this value to set distance between bottles
+# higher frequency == more bottles
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -30,7 +33,7 @@ func spawn_bottle(delta):
 	if bottle_timer >= bottle_space:
 		# RNG
 		var r = randi() % 5
-		bottle_space = rand_range(2,4) * spawn_speed_multiplier
+		bottle_space = rand_range(1, 1 + 5 / bottle_frequency)
 		# TODO Wahrscheinlichkeitsverteilung aendern
 		# spawn bottle
 		var bottle_scene
