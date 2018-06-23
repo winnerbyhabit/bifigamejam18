@@ -49,7 +49,7 @@ angular_damp = -1.0
 
 frames = SubResource( 3 )
 animation = "default"
-frame = 7
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

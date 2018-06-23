@@ -114,7 +114,7 @@ func initial_spawn_bottle():
 	print("initial spawn bottles")
 	print($Player.position)
 	var m = $Player.position.x + 1000
-	var i = 0
+	var i = -m
 	while i <= m:
 		spawn_single_bottle($Player.position + Vector2(i,10))
 		i += int (120.0 * random_distance())
