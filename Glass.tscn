@@ -13,8 +13,8 @@ extents = Vector2( 11, 11 )
 ]]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 0
+collision_mask = 3
 mode = 0
 mass = 1.0
 friction = 1.0
@@ -33,7 +33,7 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Glass" type="Sprite" parent="." index="0"]
+[node name="Texture" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 

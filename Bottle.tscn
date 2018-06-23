@@ -33,7 +33,7 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Bottle" type="Sprite" parent="." index="0"]
+[node name="Texture" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0, -2 )
 scale = Vector2( 1, 0.96875 )

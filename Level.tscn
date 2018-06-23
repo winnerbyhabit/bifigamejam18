@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://assets/kitchen_customs/wallpaper/Pared.png" type="Texture" id=2]
@@ -7,8 +7,6 @@
 [ext_resource path="res://TileMap.gd" type="Script" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sounds/background/cat_song.wav" type="AudioStream" id=7]
-[ext_resource path="res://Glass.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Bottle.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node"]
 
@@ -59,7 +57,7 @@ number_of_tiles = 3
 
 position = Vector2( 128, 225 )
 _sections_unfolded = [ "Transform" ]
-speed = 40
+speed = 100
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="1"]
 
@@ -95,11 +93,5 @@ volume_db = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
-
-[node name="Glass" parent="." index="4" instance=ExtResource( 8 )]
-
-[node name="Bottle" parent="." index="5" instance=ExtResource( 9 )]
-
-position = Vector2( 340, 40 )
 
 
