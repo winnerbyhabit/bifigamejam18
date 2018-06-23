@@ -22,37 +22,37 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="enemy" type="RigidBody2D"]
+[node name="enemy" type="Area2D" groups=[
+"enemy",
+]]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
 linear_damp = -1.0
-angular_velocity = 0.0
 angular_damp = -1.0
+collision_layer = 31
+collision_mask = 31
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+speed = 100
+lifepoints = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+position = Vector2( -2.21086, 0 )
+scale = Vector2( 3.44698, 1 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
+frame = 5
 playing = true
+
+[connection signal="body_entered" from="." to="." method="_on_enemy_wall_collision"]
 
 
