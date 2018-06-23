@@ -2,6 +2,8 @@ extends RigidBody2D
 
 signal destroy
 
+export var points = 5
+
 var destroy_height = 500
 
 func _process(delta):
@@ -14,4 +16,4 @@ func set_destroy_height(height):
 
 func kick():
 	set_collision_mask_bit(0,false)
-	
+	return points

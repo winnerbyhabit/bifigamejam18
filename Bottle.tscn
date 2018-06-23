@@ -32,6 +32,7 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+points = 5
 
 [node name="Texture" type="Sprite" parent="." index="0"]
 

@@ -40,7 +40,7 @@ func _process(delta):
 		if bottle_collision:
 			if not $meow.playing:
 				$meow.play()
-			colliding_bottle.kick()
+			$Interface_Layer/Interface.add_points( colliding_bottle.kick())
 			bottle_collision = false
 		else:
 			

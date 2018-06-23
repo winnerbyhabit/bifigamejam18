@@ -6,8 +6,7 @@ extends Node
 
 func _ready():
 	# Called every time the node is added to the scene.
-	# Initialization here
-	add_points(10)
+
 	pass
 
 func add_points(points):

@@ -1,25 +1,26 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://move_player.gd" type="Script" id=1]
-[ext_resource path="res://assets/cat/cat7.png" type="Texture" id=2]
-[ext_resource path="res://assets/cat/cat1.png" type="Texture" id=3]
-[ext_resource path="res://assets/cat/cat2.png" type="Texture" id=4]
-[ext_resource path="res://assets/cat/cat4.png" type="Texture" id=5]
-[ext_resource path="res://assets/cat/cat3.png" type="Texture" id=6]
-[ext_resource path="res://assets/cat/cat5.png" type="Texture" id=7]
-[ext_resource path="res://assets/cat/cat6.png" type="Texture" id=8]
-[ext_resource path="res://sounds/110011__tuberatanka__cat-meow.wav" type="AudioStream" id=9]
-[ext_resource path="res://sounds/415209__inspectorj__cat-screaming-a.wav" type="AudioStream" id=10]
+[ext_resource path="res://Interface.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/cat/cat7.png" type="Texture" id=3]
+[ext_resource path="res://assets/cat/cat1.png" type="Texture" id=4]
+[ext_resource path="res://assets/cat/cat2.png" type="Texture" id=5]
+[ext_resource path="res://assets/cat/cat4.png" type="Texture" id=6]
+[ext_resource path="res://assets/cat/cat3.png" type="Texture" id=7]
+[ext_resource path="res://assets/cat/cat5.png" type="Texture" id=8]
+[ext_resource path="res://assets/cat/cat6.png" type="Texture" id=9]
+[ext_resource path="res://sounds/110011__tuberatanka__cat-meow.wav" type="AudioStream" id=10]
+[ext_resource path="res://sounds/415209__inspectorj__cat-screaming-a.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "standing",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "running",
 "speed": 5.0
@@ -37,15 +38,27 @@ script = ExtResource( 1 )
 speed = 60
 automove = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="Interface_Layer" type="CanvasLayer" parent="." index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Interface" parent="Interface_Layer" index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 frames = SubResource( 1 )
 animation = "running"
-frame = 3
+frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
+[node name="Area2D" type="Area2D" parent="." index="2"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -62,17 +75,17 @@ position = Vector2( -0.258977, 0 )
 scale = Vector2( 3.14663, 1 )
 shape = SubResource( 2 )
 
-[node name="meow" type="AudioStreamPlayer" parent="." index="2"]
+[node name="meow" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="meow_wrong" type="AudioStreamPlayer" parent="." index="3"]
+[node name="meow_wrong" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
