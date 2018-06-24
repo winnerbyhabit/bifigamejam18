@@ -64,10 +64,10 @@ func restart():
 	level = null
 
 func get_points_to_next_level():
-	return current_level*20 + 10
+	return current_level*50 + 10
 
 func get_player_speed_in_next_level():
-	return current_level*0.2+1
+	return current_level*0.3+1
 
 func _on_gameover():
 	print('game_gameover')

@@ -18,7 +18,6 @@ func add_points(points):
 
 func add_lifes(lifes, force_add = true):
 	# force_add: gib Leben ohne Limit
-	printt('p:',global.lifes)
 	if force_add or global.lifes < $lifes/lifebar.max_value:
 		global.lifes += lifes
 	$lifes/lifebar.value = global.lifes
