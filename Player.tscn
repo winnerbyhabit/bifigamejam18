@@ -2,27 +2,27 @@
 
 [ext_resource path="res://move_player.gd" type="Script" id=1]
 [ext_resource path="res://Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/cat/cat7.png" type="Texture" id=3]
-[ext_resource path="res://assets/cat/cat1.png" type="Texture" id=4]
-[ext_resource path="res://assets/cat/cat2.png" type="Texture" id=5]
-[ext_resource path="res://assets/cat/cat4.png" type="Texture" id=6]
-[ext_resource path="res://assets/cat/cat3.png" type="Texture" id=7]
-[ext_resource path="res://assets/cat/cat5.png" type="Texture" id=8]
-[ext_resource path="res://assets/cat/cat6.png" type="Texture" id=9]
+[ext_resource path="res://assets/cat/cat1.png" type="Texture" id=3]
+[ext_resource path="res://assets/cat/cat2.png" type="Texture" id=4]
+[ext_resource path="res://assets/cat/cat4.png" type="Texture" id=5]
+[ext_resource path="res://assets/cat/cat3.png" type="Texture" id=6]
+[ext_resource path="res://assets/cat/cat5.png" type="Texture" id=7]
+[ext_resource path="res://assets/cat/cat6.png" type="Texture" id=8]
+[ext_resource path="res://assets/cat/cat7.png" type="Texture" id=9]
 [ext_resource path="res://sounds/110011__tuberatanka__cat-meow.wav" type="AudioStream" id=10]
 [ext_resource path="res://sounds/415209__inspectorj__cat-screaming-a.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "standing",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "running",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "standing",
 "speed": 5.0
 } ]
 
@@ -31,7 +31,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
 position = Vector2( 32.133, 34.349 )
 script = ExtResource( 1 )
@@ -56,7 +56,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 1 )
 animation = "running"
-frame = 4
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -81,6 +81,7 @@ shape = SubResource( 2 )
 
 stream = ExtResource( 10 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -89,13 +90,12 @@ bus = "Master"
 
 stream = ExtResource( 11 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
 [connection signal="game_over" from="Interface_Layer/Interface" to="." method="game_over"]
-
-[connection signal="game_won" from="Interface_Layer/Interface" to="." method="game_won"]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_wall_collision"]
 

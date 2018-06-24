@@ -85,18 +85,20 @@ func spawn_single_bottle(pos):
 		bottle.set_destroy_height(bottom_height)
 		bottle.position = pos
 		bottle.is_poison = bottle_is_poison
+		bottle.is_fish = false
 		add_child(bottle)
 		bottle.connect('hit_ground',self,'_on_bottle_hit_ground')
-		bottle_timer = 0
 	if r >= 22: # spawn Fishbowl
 		bottle_scene = "res://Fishbowl.tscn"
 		var scene = load(bottle_scene)
 		var bottle = scene.instance()
-		bottle.set_name("Bottle")
-		# bottle.set_destroy_height(bottom_height)
+		bottle.set_name("Fish")
+		bottle.set_destroy_height(bottom_height)
 		bottle.position = pos
+		bottle.is_poison = false
+		bottle.is_fish = true
 		add_child(bottle)
-		bottle_timer = 0
+		bottle.connect('hit_ground',self,'_on_bottle_hit_ground')
 
 func reset_life():
 	global.lifes = $Player.lifes
@@ -105,6 +107,7 @@ func loop_spawn_bottle(delta):
 	bottle_timer += delta
 	if bottle_timer >= bottle_space:
 		spawn_single_bottle($Player.position + Vector2(1000,0))
+		bottle_timer = 0
 
 func initial_spawn_bottle():
 	print("initial spawn bottles")

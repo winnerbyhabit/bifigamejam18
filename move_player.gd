@@ -51,14 +51,16 @@ func _process(delta):
 			bottle_collision = false
 			if colliding_bottle.is_poison:
 				poisoned()
+			if colliding_bottle.is_fish:
+				print("Fish!")
+				$Interface_Layer/Interface.add_lifes(1)
 		else:
 			if not $meow.playing and not $meow_wrong.playing:
 				$meow_wrong.play()
-			
+
 
 func move(delta):
 	position.x += speed*delta*direction
-
 
 func poisoned():
 	emit_signal('game_over')
@@ -77,7 +79,6 @@ func _on_wall_collision( body ):
 	elif body.is_in_group("bottle"):
 		bottle_collision = true
 		colliding_bottle = body
-
 
 
 func _on_body_exited( body ):

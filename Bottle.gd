@@ -4,6 +4,7 @@ signal destroy
 signal hit_ground
 
 export var is_poison = false
+export var is_fish = false
 
 export var points = 5
 
