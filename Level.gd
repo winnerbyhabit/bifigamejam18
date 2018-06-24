@@ -98,7 +98,6 @@ func spawn_single_bottle(pos):
 		add_child(bottle)
 		bottle_timer = 0
 
-
 func reset_life():
 	global.lifes = $Player.lifes
 
@@ -115,6 +114,10 @@ func initial_spawn_bottle():
 	while i <= m:
 		spawn_single_bottle($Player.position + Vector2(i,0))
 		i += int (120.0 * random_distance())
+
+func change_level():
+	print('change_level_level')
+	emit_signal('change_level')
 
 func _on_gameover():
 	emit_signal('game_over')
