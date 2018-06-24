@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Bottle.gd" type="Script" id=1]
+[ext_resource path="res://Fishbowl.gd" type="Script" id=1]
 [ext_resource path="res://assets/other/goldfish1.png" type="Texture" id=2]
 [ext_resource path="res://assets/other/goldfish2.png" type="Texture" id=3]
 [ext_resource path="res://assets/other/goldfish3.png" type="Texture" id=4]
@@ -10,8 +10,8 @@
 [ext_resource path="res://assets/other/goldfish7.png" type="Texture" id=8]
 [ext_resource path="res://assets/other/goldfish8.png" type="Texture" id=9]
 [ext_resource path="res://assets/other/goldfish9.png" type="Texture" id=10]
-[ext_resource path="res://glass_particles.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/bottles/glass_scherbe.png" type="Texture" id=12]
+[ext_resource path="res://assets/other/goldfish_skeleton.png" type="Texture" id=11]
+[ext_resource path="res://glass_particles.tscn" type="PackedScene" id=12]
 [ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -21,6 +21,11 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -98,6 +103,7 @@ points = 5
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -106,37 +112,17 @@ position = Vector2( -2, -3.49998 )
 scale = Vector2( 5.76923, 4.42308 )
 shape = SubResource( 2 )
 
-[node name="particles" type="Particles2D" parent="." index="2" instance=ExtResource( 11 )]
+[node name="particles" parent="." index="2" instance=ExtResource( 12 )]
 
 visible = false
 position = Vector2( -34.5506, 40.8247 )
-rotation = -1.5708
-emitting = false
-amount = 50
-lifetime = 1.0
-one_shot = true
-preprocess = 1.0
-speed_scale = 1.0
-explosiveness = 0.0
-randomness = 1.0
-fixed_fps = 0
-fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
-local_coords = true
-draw_order = 0
 process_material = SubResource( 3 )
-texture = ExtResource( 12 )
-normal_map = null
-h_frames = 1
-v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="Destroy" type="AudioStreamPlayer2D" parent="." index="3"]
 
 visible = false
 stream = ExtResource( 13 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
