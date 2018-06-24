@@ -4,9 +4,9 @@
 [ext_resource path="res://assets/kitchen_customs/wallpaper/Pared.png" type="Texture" id=2]
 [ext_resource path="res://assets/kitchen_customs/floor/floor.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Tileset.tres" type="TileSet" id=5]
-[ext_resource path="res://TileMap.gd" type="Script" id=6]
-[ext_resource path="res://sounds/344265__inspectorj__glass-smash-bottle-d.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/boss_battle_music.wav" type="AudioStream" id=5]
+[ext_resource path="res://Tileset.tres" type="TileSet" id=6]
+[ext_resource path="res://TileMap.gd" type="Script" id=7]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=8]
 
 [node name="BossLevel" type="Node"]
@@ -65,12 +65,22 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" index="6"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 [node name="TileMap" type="TileMap" parent="." index="3" groups=[
 "wall",
 ]]
 
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 256, 256 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -86,7 +96,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Cell" ]
 __meta__ = {
 "_edit_lock_": true
@@ -95,19 +105,12 @@ tile_coordinates = Vector2( -5, 1 )
 start_tiles = 10
 number_of_tiles = 3
 
-[node name="destroy_bottle" type="AudioStreamPlayer2D" parent="." index="4"]
-
-stream = ExtResource( 7 )
-volume_db = 0.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-
-[node name="enemy" parent="." index="5" instance=ExtResource( 8 )]
+[node name="enemy" parent="." index="4" instance=ExtResource( 8 )]
 
 position = Vector2( -332.422, 539.182 )
+lifepoints = 3
+
+[connection signal="game_over" from="Player" to="." method="_on_gameover"]
 
 [connection signal="enemy_killed" from="enemy" to="." method="_on_enemy_killed"]
 

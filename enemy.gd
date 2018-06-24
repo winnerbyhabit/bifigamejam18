@@ -29,8 +29,12 @@ func _on_enemy_wall_collision( body ):
 		
 	elif body.is_in_group('bottle'):
 		lifepoints -= 1
+		#printt('lifepoints',lifepoints)
+		$lifebar.value = lifepoints
+		body.destroy()
 		if lifepoints <= 0:
 			kill_enemy()
+			
 			
 func kill_enemy():
 	emit_signal('enemy_killed')

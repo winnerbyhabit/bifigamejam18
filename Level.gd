@@ -1,6 +1,7 @@
 extends Node
 
 signal change_level
+signal game_over
 
 onready var old_player_pos = $Player.position
 
@@ -49,6 +50,7 @@ func spawn_single_bottle(pos):
 	var bottle_scene
 	var bottle_texture
 	var bottle_type
+	var bottle_is_poison = false
 	if (0 <= r) and (r <= 4):
 		match r:
 			0: # spawn Glass
@@ -71,12 +73,14 @@ func spawn_single_bottle(pos):
 				bottle_scene = "res://Bottle.tscn"
 				bottle_texture = "res://assets/bottles/poison_bottle.png"
 				bottle_type = "Poison"
+				bottle_is_poison = true
 		var scene = load(bottle_scene)
 		var bottle = scene.instance()
 		bottle.set_name(bottle_type)
 		bottle.get_node("Texture").texture = load(bottle_texture)
 		bottle.set_destroy_height(bottom_height)
 		bottle.position = pos
+		bottle.is_poison = bottle_is_poison
 		add_child(bottle)
 		bottle_timer = 0
 	if r == 5: # spawn Fishbowl
@@ -116,3 +120,5 @@ func initial_spawn_bottle():
 		spawn_single_bottle($Player.position + Vector2(i,0))
 		i += int (120.0 * random_distance())
 
+func _on_gameover():
+	emit_signal('game_over')

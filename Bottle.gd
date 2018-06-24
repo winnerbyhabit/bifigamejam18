@@ -2,6 +2,8 @@ extends RigidBody2D
 
 signal destroy
 
+export var is_poison = false
+
 export var points = 5
 
 var destroy_height = 500
@@ -29,12 +31,6 @@ func destroy():
 	$Texture.hide()
 	if not $Destroy.playing:
 		$Destroy.play()
-	
-
-
-func enemy_enter( body ):
-	if body.is_in_group('enemy'):
-		destroy()
 
 
 func test():
