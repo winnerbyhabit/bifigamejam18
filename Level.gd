@@ -44,46 +44,50 @@ func random_distance():
 
 func spawn_single_bottle(pos):
 	# RNG
-	var r = randi() % 6
+	var r = randi() % 24
 	bottle_space = random_distance()
 	# spawn bottle
 	var bottle_scene
 	var bottle_texture
-	var bottle_type
 	var bottle_is_poison = false
-	if (0 <= r) and (r <= 4):
+	if r <= 21:
 		match r:
-			0: # spawn Glass
+			0,1,2: # spawn Glass
 				bottle_scene = "res://Glass.tscn"
 				bottle_texture = "res://assets/bottles/glass.png"
-				bottle_type = "Normal"
-			1: # spawn Bottle 1
+			3,4: # spawn Bottle 1
 				bottle_scene = "res://Bottle.tscn"
 				bottle_texture = "res://assets/bottles/bottle1.png"
-				bottle_type = "Normal"
-			2: # spawn Bottle 2
+			5,6: # spawn Bottle 2
 				bottle_scene = "res://Bottle.tscn"
 				bottle_texture = "res://assets/bottles/bottle2.png"
-				bottle_type = "Normal"
-			3: # spawn Bottle 3
+			7,8: # spawn Bottle 3
 				bottle_scene = "res://Bottle.tscn"
 				bottle_texture = "res://assets/bottles/bottle3.png"
-				bottle_type = "Normal"
-			4: # spawn Poison bottle
+			9,10,11,12: # spawn violett Poison bottle
 				bottle_scene = "res://Bottle.tscn"
 				bottle_texture = "res://assets/bottles/poison_bottle.png"
-				bottle_type = "Poison"
 				bottle_is_poison = true
+			13,14,15: # spawn green Poison bottle
+				bottle_scene = "res://Bottle.tscn"
+				bottle_texture = "res://assets/bottles/green_poison_bottle.png"
+				bottle_is_poison = true
+			16,17,18: # spawn Pot
+				bottle_scene = "res://Pot.tscn"
+				bottle_texture = "res://assets/bottles/pot.png"
+			19,20,21: # spawn Plates
+				bottle_scene = "res://Plates.tscn"
+				bottle_texture = "res://assets/bottles/plates.png"
 		var scene = load(bottle_scene)
 		var bottle = scene.instance()
-		bottle.set_name(bottle_type)
+		bottle.set_name("Bottle")
 		bottle.get_node("Texture").texture = load(bottle_texture)
 		bottle.set_destroy_height(bottom_height)
 		bottle.position = pos
 		bottle.is_poison = bottle_is_poison
 		add_child(bottle)
 		bottle_timer = 0
-	if r == 5: # spawn Fishbowl
+	if r >= 22: # spawn Fishbowl
 		bottle_scene = "res://Fishbowl.tscn"
 		bottle_type = "Fish"
 		var scene = load(bottle_scene)
@@ -93,6 +97,8 @@ func spawn_single_bottle(pos):
 		bottle.position = pos
 		add_child(bottle)
 		bottle_timer = 0
+
+
 func reset_life():
 	global.lifes = $Player.lifes
 
