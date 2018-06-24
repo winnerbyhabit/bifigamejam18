@@ -5,14 +5,13 @@ extends Node
 # var b = "textvar"
 
 func _ready():
-	$Punkte/Counter.text = str(global.points)
+	add_points(0)
+	add_lives(0)
 
 func add_points(points):
 	global.points += points
 	$Punkte/Counter.text = str(global.points)
 
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func add_lives(lifes):
+	global.lifes += lifes
+	$Punkte/Counter.text = str(global.points)

@@ -100,17 +100,6 @@ func loop_spawn_bottle(delta):
 	if bottle_timer >= bottle_space:
 		spawn_single_bottle($Player.position + Vector2(1000,0))
 
-
-
-func set_player(player):
-	remove_child($Player)
-	add_child(player)
-
-func get_player():
-	var player = $Player
-	remove_child($Player)
-	return player
-
 func initial_spawn_bottle():
 	print("initial spawn bottles")
 	print($Player.position)
