@@ -47,14 +47,14 @@ func _process(delta):
 		if bottle_collision:
 			if not $meow.playing:
 				$meow.play()
-			$Interface_Layer/Interface.add_points( colliding_bottle.kick())
-			bottle_collision = false
 			if colliding_bottle.is_poison:
 				print('vergiftet1')
 				poisoned()
 			if colliding_bottle.is_fish:
 				print("Fish!")
 				$Interface_Layer/Interface.add_lifes(1, false)
+			$Interface_Layer/Interface.add_points( colliding_bottle.kick())
+			bottle_collision = false
 		else:
 			if not $meow.playing and not $meow_wrong.playing:
 				$meow_wrong.play()

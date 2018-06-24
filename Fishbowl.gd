@@ -5,5 +5,5 @@ var used = false
 func kick():
 	if not used:
 		$Texture.play('dead')
-		is_fish = false
+		is_fish = true
 		return points
