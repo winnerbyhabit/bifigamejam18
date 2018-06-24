@@ -72,7 +72,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Spread" ]
 
-[node name="Fishbowl" type="RigidBody2D" index="0" groups=[
+[node name="Fishbowl" type="RigidBody2D" groups=[
 "bottle",
 ]]
 
@@ -103,7 +103,7 @@ points = 5
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 8
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

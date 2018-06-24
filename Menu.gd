@@ -1,5 +1,7 @@
 extends Node
 
+func _ready():
+	$Player/Interface_Layer/Interface.hide()
 
 func _on_Button_pressed():
 	print("Hello")
