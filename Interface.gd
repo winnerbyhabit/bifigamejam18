@@ -16,9 +16,10 @@ func add_points(points):
 	if global.points >= global.points_to_next_level:
 		emit_signal('game_won')
 
-func add_lifes(lifes):
-	printt('p:',global.lifes)
-	global.lifes += lifes
+func add_lifes(lifes, force_add = true):
+	# force_add: gib Leben ohne Limit
+	if force_add or global.lifes < $lifes/lifebar.max_value:
+		global.lifes += lifes
 	$lifes/lifebar.value = global.lifes
 	if global.lifes <= 0:
 		emit_signal('game_over')
