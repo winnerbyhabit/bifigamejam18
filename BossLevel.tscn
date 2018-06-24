@@ -9,7 +9,7 @@
 [ext_resource path="res://TileMap.gd" type="Script" id=7]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=8]
 
-[node name="BossLevel" type="Node" index="0"]
+[node name="BossLevel" type="Node"]
 
 script = ExtResource( 1 )
 bottom_height = 550
@@ -70,8 +70,7 @@ editor_draw_drag_margin = false
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" index="6"]
 
 stream = ExtResource( 5 )
-volume_db = 10.0
-pitch_scale = 1.0
+volume_db = 0.0
 autoplay = true
 max_distance = 2000.0
 attenuation = 1.0
@@ -100,7 +99,7 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 script = ExtResource( 7 )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
