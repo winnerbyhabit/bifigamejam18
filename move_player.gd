@@ -15,9 +15,7 @@ var bottle_collision = false
 var colliding_bottle = null
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	print("player is ready")
+	pass
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -44,7 +42,6 @@ func _process(delta):
 			bottle_collision = false
 			if colliding_bottle.is_poison:
 				poisoned()
-				print('poisoned')
 		else:
 			
 			if not $meow.playing and not $meow_wrong.playing:
