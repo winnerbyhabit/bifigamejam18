@@ -44,19 +44,19 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -9.39258, 5.08294 )
+position = Vector2( -0.139482, 1.3817 )
 scale = Vector2( 5.20446, 17.3033 )
 shape = SubResource( 1 )
 
 [node name="particles" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -1.9944, 0.54219 )
+position = Vector2( 10.9599, 15.3472 )
 scale = Vector2( 1.246, 0.841882 )
 texture = ExtResource( 4 )
 
 [node name="Destroy" type="AudioStreamPlayer2D" parent="." index="3"]
 
-position = Vector2( 39.3011, 73.7306 )
+position = Vector2( 46.7036, 60.7762 )
 scale = Vector2( 4.74762, 0.607841 )
 stream = ExtResource( 5 )
 volume_db = 0.0
