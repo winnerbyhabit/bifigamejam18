@@ -59,6 +59,7 @@ number_of_tiles = 3
 
 position = Vector2( 128, 225 )
 _sections_unfolded = [ "Transform" ]
+lifes = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="1"]
 

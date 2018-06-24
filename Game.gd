@@ -49,6 +49,7 @@ func load_level(level_number):
 	remove_level = false
 
 func _on_gameover():
+	print('game_gameover')
 	game_over = true
 	current_level = 1
 

@@ -63,6 +63,9 @@ func move(delta):
 func poisoned():
 	emit_signal('game_over')
 
+func game_over():
+	emit_signal('game_over')
+
 func _on_wall_collision( body ):
 	if body.is_in_group("wall"):
 		#turn on wall collision
