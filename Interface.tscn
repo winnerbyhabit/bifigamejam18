@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Interface.gd" type="Script" id=1]
 [ext_resource path="res://assets/other/heart.png" type="Texture" id=2]
 [ext_resource path="res://assets/claws/claw4 .png" type="Texture" id=3]
 [ext_resource path="res://assets/claws/cat_attack.png" type="Texture" id=4]
+[ext_resource path="res://sounds/212764__qubodup__lion-roar.wav" type="AudioStream" id=5]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -40,7 +41,6 @@ anchor_bottom = 0.0
 margin_right = 1033.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -58,7 +58,6 @@ margin_top = 6.0
 margin_right = 52.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -78,7 +77,6 @@ margin_left = 50.0
 margin_right = 58.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -100,7 +98,6 @@ margin_top = 6.0
 margin_right = 151.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -121,7 +118,6 @@ margin_top = -2.0
 margin_right = 136.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -147,8 +143,31 @@ texture = ExtResource( 3 )
 [node name="Cat" type="Sprite" parent="." index="4"]
 
 visible = false
-position = Vector2( 610.307, 333.347 )
-scale = Vector2( 0.0616271, 0.0353249 )
+position = Vector2( 495.833, 315.789 )
+scale = Vector2( 0.272795, 0.2368 )
 texture = ExtResource( 4 )
+
+[node name="lion_sound" type="AudioStreamPlayer2D" parent="Cat" index="0"]
+
+pause_mode = 2
+position = Vector2( -1817.6, -1333.57 )
+scale = Vector2( 3.66576, 4.22298 )
+stream = ExtResource( 5 )
+volume_db = 1.0
+autoplay = true
+max_distance = 65536.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+pause_mode = 2
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = false
+_sections_unfolded = [ "Pause" ]
 
 
