@@ -8,6 +8,7 @@ var current_level = 0
 var level = null
 var remove_level=false
 var game_over = false
+var level_restart = false
 
 
 func _ready():
@@ -15,8 +16,11 @@ func _ready():
 	#change_level()
 
 func _process(delta):
-	if remove_level or game_over:
+	if remove_level or game_over or level_restart:
 		change_level()
+	if level_restart:
+		level.reset_life()
+		level_restart = false
 
 func _on_change_level():
 	remove_level = true
@@ -41,12 +45,17 @@ func load_level(level_number):
 	level.set_name("Level")
 	add_child(level)
 	if game_over:
-		level.connect('restart',self,'_on_change_level')
+		level.connect('restart',self,'restart')
 		game_over = false
 	else:
 		level.connect('game_over',self,'_on_gameover')
 		level.connect('change_level',self,'_on_change_level')
 	remove_level = false
+
+func restart():
+	global.points=0
+	level_restart = true
+
 
 func _on_gameover():
 	print('game_gameover')
