@@ -5,13 +5,21 @@ export var heart_size = 32
 signal game_over
 signal game_won
 
+var t = Timer.new()
+
 func _ready():
 	add_points(0)
 	add_lifes(0)
 	set_max_lifes($lifes/lifebar.max_value)
-	if global.cat_scratches >= 1:
+	if global.cat_scratches >= 1: # show cat
+		t.set_wait_time(3)
+		t.set_one_shot(true)
 		get_node("Claw").show()
-		# load("res://Plates.tscn").instance().get_node("Texture")
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+		get_node("Cat").hide()
+		get_node("Claw").show()
 		match global.cat_scratches:
 			1:
 				get_node("Claw").texture = load("res://assets/claws/claw1.png")
