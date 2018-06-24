@@ -90,10 +90,9 @@ func spawn_single_bottle(pos):
 		bottle_timer = 0
 	if r >= 22: # spawn Fishbowl
 		bottle_scene = "res://Fishbowl.tscn"
-		bottle_type = "Fish"
 		var scene = load(bottle_scene)
 		var bottle = scene.instance()
-		bottle.set_name(bottle_type)
+		bottle.set_name("Bottle")
 		# bottle.set_destroy_height(bottom_height)
 		bottle.position = pos
 		add_child(bottle)
