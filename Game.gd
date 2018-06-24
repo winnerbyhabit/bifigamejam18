@@ -63,6 +63,7 @@ func restart():
 	global.points = 0
 	global.points_to_next_level = get_points_to_next_level()
 	global.player_speed_multiplicator = get_player_speed_in_next_level()
+	global.cat_scratches = -1
 	level_restart = true
 	level = null
 

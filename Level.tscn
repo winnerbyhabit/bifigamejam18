@@ -8,7 +8,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sounds/background/cat_song.wav" type="AudioStream" id=7]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 bottom_height = 500
@@ -51,8 +51,8 @@ format = 1
 tile_data = PoolIntArray(  )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Cell" ]
-tile_coordinates = Vector2( 0, 1 )
-start_tiles = 5
+tile_coordinates = Vector2( -5, 1 )
+start_tiles = 10
 number_of_tiles = 3
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
@@ -92,7 +92,6 @@ _sections_unfolded = [ "Transform" ]
 
 stream = ExtResource( 7 )
 volume_db = 1.0
-pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"

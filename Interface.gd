@@ -7,7 +7,6 @@ signal game_won
 
 
 func _ready():
-	$Cat/lion_sound.play()
 	add_points(0)
 	add_lifes(0)
 	set_max_lifes($lifes/lifebar.max_value)
@@ -15,6 +14,7 @@ func _ready():
 		get_node("Cat").show()
 		$Timer.start()
 		$Timer.connect('timeout',self,'ready2')
+		$Cat/lion_sound.play()
 
 
 		get_tree().paused = true
