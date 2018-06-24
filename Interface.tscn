@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Interface.gd" type="Script" id=1]
-[ext_resource path="res://Claw.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/other/heart.png" type="Texture" id=3]
+[ext_resource path="res://assets/other/heart.png" type="Texture" id=2]
+[ext_resource path="res://assets/claws/claw4 .png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -10,7 +10,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 32, 32 )
 margin_left = 0.0
 margin_right = 0.0
@@ -25,7 +25,7 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch" ]
 
-[node name="Interface" type="Node2D"]
+[node name="Interface" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 heart_size = 32
@@ -39,6 +39,7 @@ anchor_bottom = 0.0
 margin_right = 1033.0
 margin_bottom = 27.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -56,6 +57,7 @@ margin_top = 6.0
 margin_right = 52.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -75,6 +77,7 @@ margin_left = 50.0
 margin_right = 58.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -85,9 +88,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin" ]
 
-[node name="Claw" parent="." index="2" instance=ExtResource( 2 )]
-
-[node name="lifes" type="Label" parent="." index="3"]
+[node name="lifes" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -98,6 +99,7 @@ margin_top = 6.0
 margin_right = 151.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -118,6 +120,7 @@ margin_top = -2.0
 margin_right = 136.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -132,5 +135,12 @@ exp_edit = false
 rounded = true
 percent_visible = false
 _sections_unfolded = [ "Percent", "Rect", "custom_styles" ]
+
+[node name="Claw" type="Sprite" parent="." index="3"]
+
+visible = false
+position = Vector2( 500, 290 )
+scale = Vector2( 0.24858, 0.142487 )
+texture = ExtResource( 3 )
 
 

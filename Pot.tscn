@@ -36,6 +36,7 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 is_poison = false
+is_fish = false
 points = 5
 
 [node name="Texture" type="Sprite" parent="." index="0"]
@@ -59,7 +60,7 @@ texture = ExtResource( 4 )
 position = Vector2( -29.8583, 160.456 )
 scale = Vector2( 1.05878, 1.22904 )
 stream = ExtResource( 5 )
-volume_db = 0.0
+volume_db = 24.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

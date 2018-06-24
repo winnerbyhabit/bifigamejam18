@@ -9,6 +9,18 @@ func _ready():
 	add_points(0)
 	add_lifes(0)
 	set_max_lifes($lifes/lifebar.max_value)
+	if global.cat_scratches >= 1:
+		get_node("Claw").show()
+		# load("res://Plates.tscn").instance().get_node("Texture")
+		match global.cat_scratches:
+			1:
+				get_node("Claw").texture = load("res://assets/claws/claw1.png")
+			2:
+				get_node("Claw").texture = load("res://assets/claws/claw2.png")
+			3:
+				get_node("Claw").texture = load("res://assets/claws/claw3.png")
+			4:
+				get_node("Claw").texture = load("res://assets/claws/claw4.png")
 
 func add_points(points):
 	global.points += points

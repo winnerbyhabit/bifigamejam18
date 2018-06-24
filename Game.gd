@@ -10,10 +10,13 @@ var remove_level=false
 var game_over = false
 var level_restart = false
 
+var t = Timer.new()
+
 
 func _ready():
 	load_level(current_level)
-	#change_level()
+	t.set_wait_time(3)
+	t.set_one_shot(true)
 
 func _process(delta):
 	if remove_level or game_over or level_restart:
@@ -31,6 +34,7 @@ func change_level():
 		var my_level = get_node('Level')
 		remove_child(my_level)
 		my_level.queue_free()
+		cat_closeup()
 	load_level(current_level)
 
 	
@@ -74,4 +78,12 @@ func _on_gameover():
 	game_over = true
 	current_level = 1
 
-
+func cat_closeup():
+	var cat_level = preload('res://Cat.tscn').instance()
+	cat_level.set_name("Cat")
+	add_child(cat_level)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	remove_child(cat_level)
+	global.cat_scratches += 1
