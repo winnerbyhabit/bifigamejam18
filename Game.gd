@@ -33,7 +33,7 @@ func change_level():
 func load_level(level_number):
 	print('loadlevel')
 	if game_over:
-		level = preload('res://Credits.tscn').instance()
+		level = preload('res://Endscreen.tscn').instance()
 	elif level_number % 2 == 0:
 		level = preload('res://BossLevel.tscn').instance()
 	else:
