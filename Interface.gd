@@ -3,6 +3,7 @@ extends Node
 export var heart_size = 32
 
 signal game_over
+signal game_won
 
 func _ready():
 	add_points(0)
@@ -12,6 +13,8 @@ func _ready():
 func add_points(points):
 	global.points += points
 	$Punkte/Counter.text = str(global.points)
+	if global.points >= global.points_to_next_level:
+		emit_signal('game_won')
 
 func add_lifes(lifes):
 	printt('p:',global.lifes)

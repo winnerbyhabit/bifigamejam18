@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "textvar"
 
-var current_level = 0
+var current_level = 1
 var level = null
 var remove_level=false
 var game_over = false
@@ -54,8 +54,11 @@ func load_level(level_number):
 
 func restart():
 	global.points=0
+	global.points_to_next_level = get_points_to_next_level()
 	level_restart = true
 
+func get_points_to_next_level():
+	return current_level*10 + 20
 
 func _on_gameover():
 	print('game_gameover')

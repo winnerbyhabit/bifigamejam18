@@ -5,6 +5,7 @@ const  GAMEMODE_NORMAL = 1
 
 #Geschwindigkeit
 signal game_over
+signal game_won
 
 export var speed = 40
 
@@ -65,6 +66,9 @@ func poisoned():
 
 func game_over():
 	emit_signal('game_over')
+
+func game_won():
+	emit_signal('game_won')
 
 func _on_wall_collision( body ):
 	if body.is_in_group("wall"):

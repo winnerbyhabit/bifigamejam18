@@ -95,6 +95,8 @@ bus = "Master"
 
 [connection signal="game_over" from="Interface_Layer/Interface" to="." method="game_over"]
 
+[connection signal="game_won" from="Interface_Layer/Interface" to="." method="game_won"]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_wall_collision"]
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

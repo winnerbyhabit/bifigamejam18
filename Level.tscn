@@ -98,4 +98,6 @@ bus = "Master"
 
 [connection signal="game_over" from="Player" to="." method="_on_gameover"]
 
+[connection signal="game_won" from="Player" to="." method="change_level"]
+
 
