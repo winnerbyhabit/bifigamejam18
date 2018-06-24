@@ -44,13 +44,13 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -2.77682, -1.64349 )
+position = Vector2( 0.341066, -6.18764 )
 scale = Vector2( 5.41153, 18.8561 )
 shape = SubResource( 1 )
 
 [node name="particles" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 13.8656, -4.91 )
+position = Vector2( -11.1272, 1.90623 )
 scale = Vector2( 1.27125, 1 )
 texture = ExtResource( 4 )
 

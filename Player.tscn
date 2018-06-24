@@ -73,8 +73,8 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -0.258977, 0 )
-scale = Vector2( 3.14663, 1 )
+position = Vector2( -0.258977, -0.451102 )
+scale = Vector2( 3.14663, 2.92424 )
 shape = SubResource( 2 )
 
 [node name="meow" type="AudioStreamPlayer" parent="." index="3"]

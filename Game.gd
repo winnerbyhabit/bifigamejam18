@@ -35,6 +35,8 @@ func change_level():
 
 	
 func load_level(level_number):
+	global.points_to_next_level = get_points_to_next_level()
+	global.player_speed_multiplicator = get_player_speed_in_next_level()
 	print('loadlevel')
 	if game_over:
 		level = preload('res://Endscreen.tscn').instance()
@@ -51,12 +53,15 @@ func load_level(level_number):
 		level.connect('game_over',self,'_on_gameover')
 		level.connect('change_level',self,'_on_change_level')
 	remove_level = false
+	
 
 func restart():
-	global.points=0
+	current_level = 0
+	global.points = 0
 	global.points_to_next_level = get_points_to_next_level()
 	global.player_speed_multiplicator = get_player_speed_in_next_level()
 	level_restart = true
+	level = null
 
 func get_points_to_next_level():
 	return current_level*20 + 10

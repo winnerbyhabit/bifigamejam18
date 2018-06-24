@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 49.6802 )
 
-[node name="Bottle" type="RigidBody2D" index="0" groups=[
+[node name="Bottle" type="RigidBody2D" groups=[
 "bottle",
 ]]
 

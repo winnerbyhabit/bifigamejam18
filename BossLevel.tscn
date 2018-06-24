@@ -99,7 +99,7 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 script = ExtResource( 7 )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
