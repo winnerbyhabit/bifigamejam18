@@ -22,7 +22,7 @@ var bottle_collision = false
 var colliding_bottle = null
 
 func _ready():
-	#lebensanzeige laden
+	speed *= global.player_speed_multiplicator
 	$Interface_Layer/Interface.set_max_lifes(lifes)
 	global.lifes = lifes
 	

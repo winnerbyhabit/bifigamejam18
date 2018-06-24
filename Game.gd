@@ -55,10 +55,14 @@ func load_level(level_number):
 func restart():
 	global.points=0
 	global.points_to_next_level = get_points_to_next_level()
+	global.player_speed_multiplicator = get_player_speed_in_next_level()
 	level_restart = true
 
 func get_points_to_next_level():
-	return current_level*10 + 20
+	return current_level*20 + 10
+
+func get_player_speed_in_next_level():
+	return current_level*0.2+1
 
 func _on_gameover():
 	print('game_gameover')
