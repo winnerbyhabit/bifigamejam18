@@ -31,6 +31,7 @@ func change_level():
 		var my_level = get_node('Level')
 		remove_child(my_level)
 		my_level.queue_free()
+		cat_closeup()
 	load_level(current_level)
 
 	
@@ -74,4 +75,6 @@ func _on_gameover():
 	game_over = true
 	current_level = 1
 
-
+func cat_closeup():
+	# load cat scene
+	global.cat_scratches += 1
