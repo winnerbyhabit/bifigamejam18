@@ -93,7 +93,8 @@ func spawn_single_bottle(pos):
 		bottle.position = pos
 		add_child(bottle)
 		bottle_timer = 0
-
+func reset_life():
+	global.lifes = $Player.lifes
 
 func loop_spawn_bottle(delta):
 	bottle_timer += delta
