@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 signal destroy
+signal hit_ground
 
 export var is_poison = false
 
@@ -14,6 +15,7 @@ func _process(delta):
 	if position.y > destroy_height:
 		if not will_destroyed:
 			destroy()
+			emit_signal('hit_ground')
 
 
 func set_destroy_height(height):

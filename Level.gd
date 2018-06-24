@@ -82,6 +82,7 @@ func spawn_single_bottle(pos):
 		bottle.position = pos
 		bottle.is_poison = bottle_is_poison
 		add_child(bottle)
+		bottle.connect('hit_ground',self,'_on_bottle_hit_ground')
 		bottle_timer = 0
 	if r == 5: # spawn Fishbowl
 		bottle_scene = "res://Fishbowl.tscn"
@@ -110,6 +111,11 @@ func initial_spawn_bottle():
 	while i <= m:
 		spawn_single_bottle($Player.position + Vector2(i,0))
 		i += int (120.0 * random_distance())
+
+func _on_bottle_hit_ground():
+	print('hit_ground')
+	if $Player.game_mode == $Player.GAMEMODE_BOSS:
+		$Player/Interface_Layer/Interface.add_lifes(-1)
 
 func change_level():
 	print('change_level_level')
