@@ -12,7 +12,7 @@ func _ready():
 
 func add_points(points):
 	global.points += points
-	$Punkte/Counter.text = str(global.points)
+	$Punkte/Counter.text = str(global.points) + '/' + str(global.points_to_next_level)
 	if global.points >= global.points_to_next_level:
 		emit_signal('game_won')
 

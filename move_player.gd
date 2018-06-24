@@ -50,6 +50,7 @@ func _process(delta):
 			$Interface_Layer/Interface.add_points( colliding_bottle.kick())
 			bottle_collision = false
 			if colliding_bottle.is_poison:
+				print('vergiftet1')
 				poisoned()
 		else:
 			if not $meow.playing and not $meow_wrong.playing:
@@ -61,6 +62,7 @@ func move(delta):
 
 
 func poisoned():
+	print('vergiftet')
 	emit_signal('game_over')
 
 func game_over():
