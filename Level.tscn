@@ -16,18 +16,18 @@ bottle_frequency = 2.0
 
 [node name="bg" type="Sprite" parent="." index="0"]
 
-position = Vector2( 384, 128 )
+position = Vector2( 347.665, 13.8878 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1536, 256 )
+region_rect = Rect2( 0, 0, 3840, 500 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="bg_floor" type="Sprite" parent="." index="1"]
 
-position = Vector2( 381.949, 472.492 )
+position = Vector2( 395.11, 593.334 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1536, 256 )
+region_rect = Rect2( 0, 0, 3960, 500 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
