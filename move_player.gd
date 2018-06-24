@@ -1,5 +1,8 @@
 extends Node2D
 
+const  GAMEMODE_BOSS = 0
+const  GAMEMODE_NORMAL = 1
+
 #Geschwindigkeit
 signal game_over
 
@@ -7,6 +10,9 @@ export var speed = 40
 
 #katze bewegt sich automatisch
 export var automove = true
+export var game_mode = GAMEMODE_NORMAL
+
+export var lifes = 3
 
 var direction = 1
 var tile_size = 64
@@ -15,7 +21,10 @@ var bottle_collision = false
 var colliding_bottle = null
 
 func _ready():
-	pass
+	#lebensanzeige laden
+	$Interface_Layer/Interface.set_max_lifes(lifes)
+	global.lifes = lifes
+	
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -32,7 +41,6 @@ func _process(delta):
 			$AnimatedSprite.flip_h = true
 			
 		move(delta)
-
 
 	if Input.is_action_pressed("player_hit"):
 		if bottle_collision:
@@ -68,5 +76,9 @@ func _on_wall_collision( body ):
 
 func _on_body_exited( body ):
 	if body.is_in_group("bottle"):
+		if colliding_bottle != null:
+			if not colliding_bottle.is_poison:
+				if bottle_collision and game_mode==GAMEMODE_NORMAL:
+					$Interface_Layer/Interface.add_lifes(-1)
 		bottle_collision = false
 		colliding_bottle = null

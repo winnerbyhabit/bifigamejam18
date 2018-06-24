@@ -25,9 +25,10 @@ modulate_color = Color( 1, 1, 1, 1 )
 draw_center = true
 _sections_unfolded = [ "Axis Stretch" ]
 
-[node name="Interface" type="Node2D" index="0"]
+[node name="Interface" type="Node2D"]
 
 script = ExtResource( 1 )
+heart_size = 32
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
@@ -114,7 +115,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 37.0
 margin_top = -2.0
-margin_right = 133.0
+margin_right = 136.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
@@ -126,10 +127,10 @@ min_value = 0.0
 max_value = 3.0
 step = 1.0
 page = 0.0
-value = 3.0
+value = 0.0
 exp_edit = false
-rounded = false
-percent_visible = false
-_sections_unfolded = [ "Percent", "custom_styles" ]
+rounded = true
+percent_visible = true
+_sections_unfolded = [ "Percent", "Rect", "custom_styles" ]
 
 

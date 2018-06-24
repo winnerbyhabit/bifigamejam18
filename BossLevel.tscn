@@ -38,6 +38,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 127.991, 226.613 )
 speed = 200
 automove = false
+game_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="1"]
 
