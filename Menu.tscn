@@ -12,7 +12,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Menu" type="Node" index="0"]
+[node name="Menu" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -80,6 +80,7 @@ position = Vector2( 320.222, 76.4543 )
 "wall",
 ]]
 
+editor/display_folded = true
 position = Vector2( 187.764, 76.1197 )
 input_pickable = true
 collision_layer = 1
@@ -99,6 +100,7 @@ shape = SubResource( 1 )
 "wall",
 ]]
 
+editor/display_folded = true
 position = Vector2( 923.009, 77.3475 )
 input_pickable = true
 collision_layer = 1
@@ -120,6 +122,7 @@ _sections_unfolded = [ "Transform" ]
 "wall",
 ]]
 
+editor/display_folded = true
 position = Vector2( 834.236, 325.108 )
 input_pickable = true
 collision_layer = 1
@@ -141,6 +144,7 @@ _sections_unfolded = [ "Transform" ]
 "wall",
 ]]
 
+editor/display_folded = true
 position = Vector2( 269.447, 323.88 )
 input_pickable = true
 collision_layer = 1
