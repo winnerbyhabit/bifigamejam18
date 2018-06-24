@@ -44,6 +44,7 @@ func _process(delta):
 			bottle_collision = false
 			if colliding_bottle.is_poison:
 				poisoned()
+				print('poisoned')
 		else:
 			
 			if not $meow.playing and not $meow_wrong.playing:
