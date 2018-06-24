@@ -17,5 +17,4 @@ func next_credit():
 		text = credits[counter]
 		counter+=1
 	else:
-		emit_signal('restart')
-		#get_tree().quit()
+		get_tree().quit()
